@@ -39,7 +39,8 @@ public class Program {
 			double avg = list.stream().map(p -> p.getPrice()).reduce(0.0, (x, y) -> x + y) / list.size();
 
 			System.out.println("Average price: " + String.format("%.2f", avg));
-
+			System.out.println("------------------");
+			
 			Comparator<String> comp = (x1, y1) -> x1.toUpperCase().compareTo(y1.toUpperCase());
 
 			List<String> names = list.stream()
@@ -48,6 +49,7 @@ public class Program {
 					.sorted(comp.reversed())
 					.collect(Collectors.toList());
 
+			System.out.println("Items: ");
 			names.forEach(System.out::println);
 
 		} catch (Exception e) {
